@@ -4,6 +4,7 @@ package br.com.unipds.reactiveapi.service;
 
 import br.com.unipds.reactiveapi.model.DocFiscal;
 import br.com.unipds.reactiveapi.repository.DocFiscalRepo;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -13,6 +14,9 @@ public class DocFiscalServiceImpl implements IDocFiscalService{
 
     private DocFiscalRepo repo;
     private WebClient webClient;
+
+    @Value("${api.external.url}")
+    private String baseUrl;
 
     public DocFiscalServiceImpl(DocFiscalRepo repo , WebClient webClient) {
         super();
@@ -26,7 +30,7 @@ public class DocFiscalServiceImpl implements IDocFiscalService{
         System.out.println("DEBUG = IDCLIENTE="+idCliente);
         System.out.println("DEBUG = IDSERVICO="+idServico);
         webClient.get()
-                .uri("http://slowapi.isilab.com.br/api/v1/autorizacao/"+idCliente+"?servico="+idServico)
+                .uri(baseUrl + "/api/v1/autorizacao/"+idCliente+"?servico="+idServico)
                 .retrieve()
                 .bodyToMono(String.class)
                 .doOnNext((resposta)->{
