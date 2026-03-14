@@ -1,4 +1,6 @@
 package com.unipds.authapi.security;
 
-public class MyToken {
+
+public record MyToken(String token) {
+
 }
