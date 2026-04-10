@@ -460,17 +460,8 @@ Para contribuir com o projeto:
 
 ## 📝 Licença
 
-Este projeto está sob licença MIT. Veja o arquivo LICENSE para mais detalhes.
+Este projeto faz parte da pós-graduação.
 
----
-
-## 📞 Suporte e Contato
-
-Para dúvidas ou sugestões:
-
-- **Email:** contato@unipds.com
-- **Website:** https://www.unipds.com
-- **Documentação:** Consulte o Swagger em http://localhost:8081/swagger-ui.html
 
 ---
 
